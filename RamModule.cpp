@@ -90,11 +90,11 @@ void RamModule::refresh() {
 
   host_statistics(mach_host_self(), HOST_VM_INFO, (host_info_t)&vmstat, &count);
 
-  _totalRamItem->setValue(unsignedIntToString(vmstat.wire_count + vmstat.active_count + vmstat.inactive_count + vmstat.free_count));
-  _wiredRamItem->setValue(unsignedIntToString(vmstat.wire_count));
-  _activeRamItem->setValue(unsignedIntToString(vmstat.active_count));
-  _inactiveRamItem->setValue(unsignedIntToString(vmstat.inactive_count));
-  _freeRamItem->setValue(unsignedIntToString(vmstat.free_count));
+  _totalRamItem->setValue(unsignedIntToString((vmstat.wire_count + vmstat.active_count + vmstat.inactive_count + vmstat.free_count) / 256));
+  _wiredRamItem->setValue(unsignedIntToString(vmstat.wire_count / 256));
+  _activeRamItem->setValue(unsignedIntToString(vmstat.active_count / 256));
+  _inactiveRamItem->setValue(unsignedIntToString(vmstat.inactive_count / 256));
+  _freeRamItem->setValue(unsignedIntToString(vmstat.free_count / 256));
 
   float activeRamProportion = static_cast<float>(vmstat.active_count) / static_cast<float>(vmstat.wire_count + vmstat.active_count + vmstat.inactive_count + vmstat.free_count);
 

@@ -20,8 +20,10 @@ SRC = \
 			Monitor.cpp							\
 			NCursesDisplay.cpp			\
 			RamModule.cpp						\
+			OsModule.cpp						\
 			TextItem.cpp						\
 			HorizontalBarItem.cpp		\
+			Info.cpp								\
 
 OBJ = $(SRC:.cpp=.o)
 
