@@ -18,14 +18,14 @@ class NCursesDisplay : public IMonitorDisplay {
 public:
 
   NCursesDisplay();
-  ~NCursesDisplay();
 
   void refresh();
-
   void draw();
-  void draw(IMonitorModule&);
-  void draw(TextItem&);
-  void draw(HorizontalBarItem&);
+
+  void drawRectangle(int x, int y, int width, int height, int color);
+  void drawText(int x, int y, const char* text, int color);
+
+  ~NCursesDisplay();
 
 
 private:
@@ -33,6 +33,8 @@ private:
   void _getKey();
   NCursesDisplay(const NCursesDisplay& rhs);
   NCursesDisplay& operator=(const NCursesDisplay& rhs);
+
+  int _scrollY;
 
 };
 

@@ -23,11 +23,7 @@ public:
   virtual ~IMonitorDisplay() {};
 
   virtual void refresh() = 0;
-
   virtual void draw() = 0;
-  virtual void draw(IMonitorModule&) = 0;
-  virtual void draw(TextItem&) = 0;
-  virtual void draw(HorizontalBarItem&) = 0;
 
 
 private:

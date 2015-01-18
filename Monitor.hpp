@@ -33,7 +33,7 @@ public:
   void setDisplay(IMonitorDisplay*);
   void addModule(IMonitorModule*);
   void removeModule(IMonitorModule*);
-  const std::list<IMonitorModule*>& getModules() const;
+  std::list<IMonitorModule*>& getModules();
 
 private:
 

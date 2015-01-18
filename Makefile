@@ -19,6 +19,8 @@ SRC = \
 			main.cpp						\
 			Monitor.cpp					\
 			NCursesDisplay.cpp	\
+			RamModule.cpp				\
+			TextItem.cpp				\
 
 OBJ = $(SRC:.cpp=.o)
 

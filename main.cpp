@@ -11,6 +11,7 @@
 #include <iostream>
 #include "Monitor.hpp"
 #include "NCursesDisplay.hpp"
+#include "RamModule.hpp"
 
 int main(int argc, char **argv) {
 

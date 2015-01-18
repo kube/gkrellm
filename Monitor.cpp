@@ -37,8 +37,11 @@ void Monitor::run() {
   _elapsedTime = 0;
 
   while (_running) {
-    this->refresh();
-    this->draw();
+
+    if (!_paused) {
+      this->refresh();
+      this->draw();
+    }
 
     usleep(MONITOR_REFRESH_RATE);
     elapsedMicroSeconds += MONITOR_REFRESH_RATE;
@@ -56,6 +59,14 @@ void Monitor::run() {
 
 void Monitor::refresh() {
   _currentDisplay->refresh();
+
+  std::list<IMonitorModule*>::const_iterator module;
+  for (module = _modules.begin(); module != _modules.end(); module++)
+    if (_elapsedTime - (*module)->getLastRefresh() >= (*module)->getRefreshRate()) {
+      (*module)->setLastRefresh(_elapsedTime);
+      (*module)->refresh();
+    }
+
 }
 
 void Monitor::draw() {
@@ -72,7 +83,7 @@ void Monitor::removeModule(IMonitorModule* module) {
   _modules.remove(module);
 }
 
-const std::list<IMonitorModule*>& Monitor::getModules() const {
+std::list<IMonitorModule*>& Monitor::getModules() {
   return _modules;
 }
 
