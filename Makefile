@@ -13,8 +13,12 @@ NAME = ft_gkrellm
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -O3
 
+LDFLAGS = -lncurses
+
 SRC = \
-			main.cpp
+			main.cpp						\
+			Monitor.cpp					\
+			NCursesDisplay.cpp	\
 
 OBJ = $(SRC:.cpp=.o)
 
