@@ -15,6 +15,7 @@
 #include "IMonitorModule.hpp"
 
 #include "TextItem.hpp"
+#include "HorizontalBarItem.hpp"
 
 class RamModule : public IMonitorModule {
 
@@ -50,6 +51,8 @@ private:
   TextItem* _activeRamItem;
   TextItem* _inactiveRamItem;
   TextItem* _freeRamItem;
+
+  HorizontalBarItem* _wiredRamItemBar;
 
   int _lastRefresh;
   int _refreshRate;

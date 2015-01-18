@@ -31,11 +31,16 @@ RamModule::RamModule() :
   _inactiveRamItem = new TextItem("inactiveRamItem");
   _freeRamItem = new TextItem("freeRamItem");
 
+  _wiredRamItemBar = new HorizontalBarItem("_wiredRamItemBar", 0.01f);
+
+
   addItem(_totalRamItem);
   addItem(_wiredRamItem);
   addItem(_activeRamItem);
   addItem(_inactiveRamItem);
   addItem(_freeRamItem);
+
+  addItem(_wiredRamItemBar);
 }
 
 RamModule::~RamModule() {
@@ -90,6 +95,10 @@ void RamModule::refresh() {
   _activeRamItem->setValue(unsignedIntToString(vmstat.active_count));
   _inactiveRamItem->setValue(unsignedIntToString(vmstat.inactive_count));
   _freeRamItem->setValue(unsignedIntToString(vmstat.free_count));
+
+  float wiredRamProportion = static_cast<float>(vmstat.wire_count) / static_cast<float>(vmstat.wire_count + vmstat.active_count + vmstat.inactive_count + vmstat.free_count);
+
+  _wiredRamItemBar->setValue(wiredRamProportion);
 }
 
 void RamModule::draw(NCursesDisplay& display, int x, int y) const {

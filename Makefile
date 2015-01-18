@@ -16,11 +16,12 @@ CXXFLAGS = -Wall -Werror -Wextra -O3
 LDFLAGS = -lncurses
 
 SRC = \
-			main.cpp						\
-			Monitor.cpp					\
-			NCursesDisplay.cpp	\
-			RamModule.cpp				\
-			TextItem.cpp				\
+			main.cpp								\
+			Monitor.cpp							\
+			NCursesDisplay.cpp			\
+			RamModule.cpp						\
+			TextItem.cpp						\
+			HorizontalBarItem.cpp		\
 
 OBJ = $(SRC:.cpp=.o)
 

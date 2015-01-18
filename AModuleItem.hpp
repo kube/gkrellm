@@ -24,7 +24,6 @@ public:
 
   virtual const std::string& getName() const = 0;
   virtual int getHeight() const = 0;
-  virtual void setValue(const std::string& value) = 0;
 
   virtual void draw(NCursesDisplay& display, int x, int y) const = 0;
 

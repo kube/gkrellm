@@ -13,16 +13,15 @@
 #include "NCursesDisplay.hpp"
 #include "RamModule.hpp"
 
-int main(int argc, char **argv) {
+int main() {
 
   Monitor& monitor = *(Monitor::getInstance());
+  monitor.setDisplay(new NCursesDisplay());
 
-  if (argc > 1 && (std::string(argv[1]) == "--graphic" || std::string(argv[1]) == "-g"))
-    std::cout << "Launch in Graphic mode" << std::endl;
-  else
-    monitor.setDisplay(new NCursesDisplay());
+
+  Monitor::getInstance()->addModule(new RamModule());
+
 
   monitor.run();
-
   return 0;
 }

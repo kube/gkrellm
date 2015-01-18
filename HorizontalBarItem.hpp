@@ -18,7 +18,7 @@ class HorizontalBarItem : public AModuleItem {
 public:
 
   HorizontalBarItem(const std::string& name);
-  HorizontalBarItem(const std::string& name, const std::string& value);
+  HorizontalBarItem(const std::string& name, float value);
   ~HorizontalBarItem();
 
   const std::string& getName() const;
