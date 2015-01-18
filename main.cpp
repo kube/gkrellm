@@ -14,6 +14,7 @@
 
 #include "RamModule.hpp"
 #include "OsModule.hpp"
+#include "UserModule.hpp"
 
 int main() {
 
@@ -22,6 +23,7 @@ int main() {
 
 
   Monitor::getInstance()->addModule(new OsModule());
+  Monitor::getInstance()->addModule(new UserModule());
   Monitor::getInstance()->addModule(new RamModule());
 
 
