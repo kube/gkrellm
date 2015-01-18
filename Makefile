@@ -21,7 +21,8 @@ SRC = \
 			NCursesDisplay.cpp			\
 			RamModule.cpp						\
 			OsModule.cpp						\
-			UserModule.cpp						\
+			UserModule.cpp					\
+			DateModule.cpp					\
 			TextItem.cpp						\
 			HorizontalBarItem.cpp		\
 			Info.cpp								\

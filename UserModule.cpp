@@ -20,7 +20,7 @@
 
 UserModule::UserModule() :
   _refreshRate(100000),
-  _title("OS")
+  _title("User")
 {
   Info user;
 
