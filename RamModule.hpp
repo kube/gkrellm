@@ -52,7 +52,7 @@ private:
   TextItem* _inactiveRamItem;
   TextItem* _freeRamItem;
 
-  HorizontalBarItem* _wiredRamItemBar;
+  HorizontalBarItem* _activeRamItemBar;
 
   int _lastRefresh;
   int _refreshRate;

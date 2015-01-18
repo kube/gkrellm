@@ -118,6 +118,9 @@ void NCursesDisplay::drawRectangle(int x, int y, int width, int height, int colo
 }
 
 void NCursesDisplay::drawText(int x, int y, const char* text, int color) {
+  if (x < 0 || y < 0 || y >= LINES)
+    return;
+
   move(y, x);
   attron(COLOR_PAIR(color));
   printw(text);

@@ -34,8 +34,8 @@ TextItem::~TextItem() {
 
 
 void TextItem::draw(NCursesDisplay& display, int x, int y) const {
-  display.drawText(x + 1, y + 1, (_name + " :").c_str(), 2);
-  display.drawText(COLS / 2 - _value.length() / 2, y + 1, _value.c_str(), 1);
+  display.drawText(x + 1, y + 2, (_name + " :").c_str(), 2);
+  display.drawText(COLS / 2 - _value.length() / 2, y + 2, _value.c_str(), 1);
 }
 
 

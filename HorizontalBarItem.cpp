@@ -36,7 +36,7 @@ HorizontalBarItem::~HorizontalBarItem() {
 void HorizontalBarItem::draw(NCursesDisplay& display, int x, int y) const {
   int width = static_cast<int>((COLS - 4) * _value);
 
-  display.drawText(x + 1, y + 1, std::string(width, '|').c_str(), 3);
+  display.drawText(x + 1, y + 2, std::string(width, '|').c_str(), 3);
 }
 
 
